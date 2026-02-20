@@ -4,7 +4,7 @@ Many programming languages & parsing libraries aid creation & enforcement of
 command-line syntax with diverse internal logic and layering.  Any checking is
 better than none.  Therefore a modular specification of what libs can & actually
 do is needed.  Its run-time use can satisfy more contexts than any static
-compromise.  [This proposal](#proposal)[^1] aims to help interoperability among
+compromise.  [This proposal](#3proposal)[^1] aims to help interoperability among
 diverse parsing libraries trying to address this problem.
 
 <details><summary><strong>1.Interactive Ergonomics Vs. Durable Clarity</strong>
