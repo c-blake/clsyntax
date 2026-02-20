@@ -180,7 +180,9 @@ provide *almost* any combination of these rules by default.[^5]  There is no way
 to disable `known` (known options only) which is just always on.  `typed` (type
 validation enforced) is always in effect for all parameters.  Almost any system
 that allows string parameters is vulnerable to stringly-typing issues, though.
-As mentioned, partial support is fine.
+
+As mentioned, partial support is fine, but more is better.  Here is a probably
+mostly correct [survey](survey.md) of prominent command-line toolkits.
 </details>
 <details><summary><strong>7.Limitations & Counters</strong></summary>
 
