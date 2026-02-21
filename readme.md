@@ -217,7 +217,7 @@ That said, I'm happy to cite things if told.  It is also a work-in-progress and
 I'm happy to credit useful contributions if github's PR system doesn't work for
 you.  There is, of course, much discussion of CL syntax & semantic problems
 (like repeats replacing or collecting, or the key-name auto-duplications like
-`--no-` for bool flags), but such semantics is out-of-scope here.
+`--no-` for bool flags), but such semantics is out of scope here.
 </details>
 
 [^1]: This document began life as
