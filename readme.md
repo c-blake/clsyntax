@@ -114,7 +114,7 @@ for syntax itself" is a set of feature substrings:
 |          | **motive:** Avoid `isLand` vs `island` ambiguity                |
 | `long`   | **means:**  long-form `--` syntax only (`--key`, not `-k`)      |
 |          | **motive:** Avoid multiple-spellings of option keys             |
-| `all`    | **means:**  all of the above flags are activated (like -Wall)   |
+| `strict` | **means:**  all of the above flags are activated (like -Wall)   |
 |          | **motive:** Avoid long-form entry of the most strict set        |
 <details><summary><strong>4.Details & Clarifications</strong></summary>
 
@@ -144,8 +144,8 @@ itself means agreeing upon yet more syntax which is out of the present scope.
 </details>
 <details><summary><strong>5.Example Activation</strong></summary>
 
-Activating maximum strictness is simply `CLSYNTAX=all`, but any subset also fits
-in a 1-line block of POSIX shell:
+Activating maximum strictness is simply `export CLSYNTAX=strict`, but any subset
+also fits in a 1-line block of POSIX shell:
 ```sh
 export CLSYNTAX=kvSep,noMix,endOpt,typed,known,noFold,valued,full,exact,long
 ```
