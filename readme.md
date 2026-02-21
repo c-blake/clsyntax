@@ -211,7 +211,7 @@ I thought of this solution independently and could find no idea more similar
 than `getopt_long` interpretation of `POSIXLY_CORRECT` (which I didn't even know
 about until I started searching for features like this).  That's a broader idea,
 though, adjusting other interoperability knobs like 1024-byte vs 512-byte block
-block units.  The equivalent here, `CLSYNTAX=noMix` is more specific/targeted.
+units.  The equivalent here, `CLSYNTAX=noMix` is more specific/targeted.
 
 That said, I'm happy to cite things if told.  It is also a work-in-progress and
 I'm happy to credit useful contributions if github's PR system doesn't work for
