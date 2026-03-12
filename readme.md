@@ -198,6 +198,14 @@ decide the "more primary" mistake is that `'a'` (or `ab`) is not a key at all.
 Similar error messages for the same erroneous string in the same mode basically
 has to be out of scope.
 
+Another issue this idea shares with that of Landin 1965's "Next 700 Programming
+Languages" is coverage. While custom-syntax tools like `tar`/`find`/.. are their
+literal own universe, there are still uncovered variation axes.  Examples are
+the single-dash long-only of `gcc` or `X11`, or '/'-headered multiple /s/h/o/r/t
+options of Microsoft Windows.  The former of these (where one can imagine
+"either single *or* double-dash" headers if short options are disabled) is much
+more workable into the clsyntax framework presented here than the latter.
+
 </details>
 <details><summary> <strong>8.Related Work</strong></summary>
 
@@ -240,8 +248,7 @@ tests also fail since programs often inherit those.
 be ok, but is maybe off-style using `CLSYNTAX` at all (once doing lax-\>strict).
 
 [^5]: If they really want, a program author can pass their own `ClCfg` object
-which overrides the default interpretation of `$CLSYNTAX`.
-Usual approaches
+which overrides the default interpretation of `$CLSYNTAX`.  Usual approaches
 hard-wire such choices, trying to balance aforementioned incompatible concerns.
 Given the mentioned dynamic, lexical, and even mental context diversity,
 deferring such choice to run-time parameters seems a better way forward.
