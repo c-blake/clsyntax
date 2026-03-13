@@ -114,8 +114,10 @@ for syntax itself" is a set of feature substrings:
 |          | **motive:** Avoid `isLand` vs `island` ambiguity                |
 | `long`   | **means:**  long-form `--` syntax only (`--key`, not `-k`)      |
 |          | **motive:** Avoid multiple-spellings of option keys             |
-| `strict` | **means:**  all of the above flags are activated (like -Wall)   |
-|          | **motive:** Avoid long-form entry of the most strict set        |
+| `just1`  | **means:**  long-form `-` syntax only (`-key`, not `-k`)        |
+|          | **motive:** Avoid multiple-spellings of option keys             |
+| `strict` | **means:**  all flags above except just1 active (like -Wall)    |
+|          | **motive:** Avoid long-form entry of a common strict set        |
 <details><summary><strong>4.Details & Clarifications</strong></summary>
 
 Feature presence tests are case-sensitive substring search on `CLSYNTAX` - no
@@ -131,7 +133,8 @@ Some clarifications.  `CLSYNTAX` should override library defaults, but config
 files can override `CLSYNTAX` and programs themselves can opt-out completely (by
 hand-rolling option parsing anyway!).  Command-lines self-specifying their own
 syntax is out of scope.  `noMix` & `endOpt` are distinct - `noMix` *implicitly*
-ends options before required `--` ends them *explicitly*.
+ends options before required `--` ends them *explicitly*.  `just1` is really a
+kind of qualifier on `long` as without `long` also, `just1` does nothing.
 
 Also, this is not intended to be exhaustive.  E.g., late rather than early
 optionals better tracks prevailing trends of how programming language argument
@@ -169,7 +172,7 @@ int noFold = strstr("noFold", clsyntax); /* ... */
 clsyntax = os.environ.get("CLSYNTAX", "")
 noFold = "noFold" in clsyntax) # ...
 ```
-and so on.  There are only 11 substrings and `CLSYNTAX` itself is also short.
+and so on.  There are only 12 substrings and `CLSYNTAX` itself is also short.
 Any increased time relative to a non-allocating tokenization + hash lookups is
 in the noise compared to the implicit new program image creation in play.
 
@@ -180,6 +183,8 @@ provide *almost* any combination of these rules by default.[^5]  There is no way
 to disable `known` (known options only) which is just always on.  `typed` (type
 validation enforced) is always in effect for all parameters.  Almost any system
 that allows string parameters is vulnerable to stringly-typing issues, though.
+`cligen` additionally provides an extra *lax*ness flag - `or12` which in
+combination with `long` allows either `-key` or `--key` forms).
 
 As mentioned, partial support is fine, but more is better.  Here is a probably
 mostly correct [survey](survey.md) of prominent command-line toolkits.
@@ -200,11 +205,12 @@ has to be out of scope.
 
 Another issue this idea shares with that of Landin 1965's "Next 700 Programming
 Languages" is coverage. While custom-syntax tools like `tar`/`find`/.. are their
-literal own universe, there are still uncovered variation axes.  Examples are
-the single-dash long-only of `gcc` or `X11`, or '/'-headered multiple /s/h/o/r/t
-options of Microsoft Windows.  The former of these (where one can imagine
-"either single *or* double-dash" headers if short options are disabled) is much
-more workable into the clsyntax framework presented here than the latter.
+literal own universes, there are still uncovered variation axes.  An example is
+'/'-headered multiple /s/h/o/r/t options common on Microsoft Windows.  Even if
+the header was parameterized to be '-', '/' or other, in human terms, kebab-case
+is a thing while /s/h/o/r/t matches no known similar pattern.  So, `exact` and
+this new hypothetical flag conflict.  This document/convention prioritizes kebab
+which some might view as Unix-centric.
 
 </details>
 <details><summary> <strong>8.Related Work</strong></summary>
