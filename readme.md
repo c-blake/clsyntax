@@ -134,7 +134,9 @@ files can override `CLSYNTAX` and programs themselves can opt-out completely (by
 hand-rolling option parsing anyway!).  Command-lines self-specifying their own
 syntax is out of scope.  `noMix` & `endOpt` are distinct - `noMix` *implicitly*
 ends options before required `--` ends them *explicitly*.  `just1` is really a
-kind of qualifier on `long` as without `long` also, `just1` does nothing.
+kind of qualifier on `long` as without `long` also, `just1` does nothing and
+is less a kind of strictness and more a gcc/X11 syntax variant common enough to
+support.
 
 Also, this is not intended to be exhaustive.  E.g., late rather than early
 optionals better tracks prevailing trends of how programming language argument
