@@ -205,14 +205,14 @@ decide the "more primary" mistake is that `'a'` (or `ab`) is not a key at all.
 Similar error messages for the same erroneous string in the same mode basically
 has to be out of scope.
 
-Another issue this idea shares with that of Landin 1965's "Next 700 Programming
+Another issue this idea shares with that of Landin 1966's "Next 700 Programming
 Languages" is coverage. While custom-syntax tools like `tar`/`find`/.. are their
-literal own universes, there are still uncovered variation axes.  An example is
-'/'-headered multiple /s/h/o/r/t options common on Microsoft Windows.  Even if
+literal own-universes, there are still uncovered variation axes.  An example is
+'/'-headered multiple `/s/h/o/r/t` options common on Microsoft Windows.  Even if
 the header was parameterized to be '-', '/' or other, in human terms, kebab-case
-is a thing while /s/h/o/r/t matches no known similar pattern.  So, `exact` and
-this new hypothetical flag conflict.  This document/convention prioritizes kebab
-which some might view as Unix-centric.
+is a thing, notationally while /s/h/o/r/t matches no similar convention.  So,
+`exact` and this new hypothetical flag conflict.  This document/convention
+prioritizes kebab which some might view as Unix-centric.
 
 </details>
 <details><summary> <strong>8.Related Work</strong></summary>
