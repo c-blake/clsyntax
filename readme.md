@@ -228,6 +228,10 @@ than `getopt_long` interpretation of `POSIXLY_CORRECT` (which I didn't even know
 about until I started searching for features like this).  That's a broader idea,
 though, adjusting other interoperability knobs like 1024-byte vs 512-byte block
 units.  The equivalent here, `CLSYNTAX=noMix` is more specific/targeted.
+The Z shell (Zsh) going back to its origins around 1990 has had a `setopt`
+facility with various dynamic syntax options at the shell layer, but that is
+about shell syntax - a related but prior stage to command-syntax itself.  Those
+syntax options often relate to lax vs. strict, as well as to shell-portability.
 
 That said, I'm happy to cite things if told.  It is also a work-in-progress and
 I'm happy to credit useful contributions if github's PR system doesn't work for
