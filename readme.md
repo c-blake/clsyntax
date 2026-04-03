@@ -55,7 +55,7 @@ what **only run-time calling contexts know** can better satisfy both use cases.
 
 Syntax diversity of files holding commands compounds the core issue.  POSIX
 shell syntax is an easy target, but the root cause of many undesired outcomes is
-multi-source string synthesis, aka templating.  Templating goes hand-in-hand
+multi-source string synthesis, aka "templating".  Templating goes hand-in-hand
 with abstracting / parameterizing interactive prototypes, but **only callers
 know the _lexical_ context** of "some scripting/templating assemblage".
 
@@ -85,7 +85,7 @@ The choice for a run-time switch in this proposal is the highly portable one of
 environmental variables, like [`NO_COLOR`](https://no-color.org/).  This is easy
 enough on both users & programmers.[^3] While being inheritable/globally scoped
 and low visibility can be problems, here that is *actively wanted* since the
-idea is specifically to run-time activate syntactic strictness across a whole
+idea is specifically to run-time-activate syntactic strictness across a whole
 assembly of durably expressed and perhaps dynamically nested programs, written
 against various parsing libs in various programming languages
 
